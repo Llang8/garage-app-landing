@@ -1,0 +1,439 @@
+/************************** 
+    IMPORTS
+***************************/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/************************** 
+    VARIABLES
+***************************/
+
+$main-blue: rgb(57,160,237);
+$dark-blue: rgb(2,39,60);
+$blue-footer: rgb(194,244,255);
+
+/* RESET DEFAULTS */
+html,body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/************************** 
+    NAV STYLES
+***************************/
+
+nav {
+    z-index: 10;
+    position: fixed;
+    padding: 0px 20px;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: calc(100vw - 40px);
+    font-weight: bolder;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s all;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.nav-sticky {
+    background: $dark-blue;
+}
+
+/************************** 
+    GLOBAL STYLES
+***************************/
+
+.btn {
+    width: 230px;
+    height: 60px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 18px;
+    }
+}
+
+.blue {
+    background: $main-blue;
+    color: white;
+}
+
+.white {
+    background: white;
+    color: $main-blue;
+}
+
+.fadeUp {
+    animation: fadeUp 2s;
+}
+
+.fadeRight {
+    animation: fadeRight 2s;
+}
+
+.fadeLeft {
+    animation: fadeLeft 2s;
+}
+
+.fadeUpOnScroll, .fadeRightOnScroll, .fadeLeftOnScroll {
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeRight {
+    0% {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/************************** 
+    HERO STYLES
+***************************/
+
+
+.landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(rgba(57,160,237,.4),rgba(57,160,237,.4)), url('./assets/books.jpg');
+    background-size: auto 100vh;
+    background-position-x: -100px;
+    color: white;
+    background-color: white;
+    font-weight: bolder;
+
+    & > * {
+        animation: fadeUp 1s;
+    }
+    
+    & > svg {
+        margin-bottom: 10px;
+        width: 80px;
+        height: 100px;
+    }
+
+    & > h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    & > .btn {
+        margin-top: 45px;
+    }
+
+    #down {
+        position: absolute;
+        top: 90vh;
+        height: 13px;
+        width: 25px;
+        fill: white;
+        animation: moveArrow 1s infinite;
+
+        & > * {
+            stroke-width: 20px;
+        }
+    }
+
+    &:after {
+        content: "";
+        z-index: 5;
+        position: absolute;
+        height: 10px;
+        top: calc(100vh - 10px);
+        background: $main-blue;
+        align-self: flex-start;
+        animation: loadBar 10s infinite linear;
+    }
+
+    &:before {
+        content: "";
+        z-index: 4;
+        position: absolute;
+        height: 10px;
+        width: 100%;
+        top: calc(100vh - 10px);
+        background: rgba(0,0,0,0.3);
+        align-self: flex-start;
+    }
+
+}
+
+@keyframes loadBar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes moveArrow {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/************************** 
+    COMMUNITY SECTION STYLES
+***************************/
+
+.community-section {
+    margin-top: 100vh;
+    padding: 25px;
+
+    .community-wrapper {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: $dark-blue;
+
+        & > h1 {
+            margin-bottom: 5px;
+        }
+
+        & > p {
+            margin-top: 0;
+        }
+    }
+}
+
+/************************** 
+    FEATURES SECTION STYLES
+***************************/
+.features-section {
+    padding: 25px;
+    background: $main-blue;
+    color: white;
+
+    .features-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px 0;
+
+            & > h1, & > p {
+                margin: 5px;
+            }
+
+            & > svg {
+                margin-bottom: 15px;
+            }
+        }
+
+        .feature-divider {
+            width: 13px;
+            height: 13px;
+            background: white;
+            border-radius: 50%;
+            margin: 15px 0;
+        }
+    }
+}
+
+/************************** 
+    CONTACT SECTION STYLES
+***************************/
+.contact-section {
+    padding: 25px;
+
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $dark-blue;
+
+        .contact-header {
+            display: flex;
+            width: 100vw;
+            align-items: center;
+            margin-bottom: 10px;
+
+            & > h1 {
+                margin: 0 10px;
+                min-width: 150px;
+                text-align: center;
+            }
+            .bar-left {
+                height: 10px;
+                width: 100%;
+                background: $main-blue;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            .bar-right {
+                height: 10px;
+                width: 100%;
+                background: $main-blue;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+
+        & > form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            width: 80%;
+            min-width: 250px;
+            max-width: 800px;
+            font-weight: bold;
+
+            & > input[type="text"], & > textarea {
+                width: calc(100% - 10px);
+                padding: 5px;
+                border: 2px solid $dark-blue;
+                background-color: #FCFCFC;
+                border-radius: 4px;
+                margin-bottom: 10px;
+
+            }
+            
+            & > label {
+                display: block;
+                align-self: flex-start;
+            }
+
+            & > button {
+                width: 120px;
+                height: 30px;
+                border: 0;
+                align-self: flex-start;
+                margin: 10px 0px;
+            }
+        }
+    }
+}
+
+/************************** 
+    DOWNLOAD SECTION STYLES
+***************************/
+.download-section {
+    color: white;
+    background: $main-blue;
+    padding: 25px;
+    
+    .download-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        & > p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        & > h1 {
+            margin: 10px 0px;
+        }
+
+        & > .btn {
+            margin-top: 10px;
+        }
+    }
+}
+
+/************************** 
+    FOOTER SECTION STYLES
+***************************/
+footer {
+    background: $dark-blue;
+    color: $blue-footer;
+    padding: 25px;
+
+    & > .footer-links {
+
+        & > h1 {
+            margin: 0 0 10px 0;
+            font-size: 21px;
+        }
+
+        & > a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    & > .footer-social {
+        margin-top: 10px;
+
+        & > h1 {
+            margin: 0 0 10px 0;
+            font-size: 21px;
+        }
+
+        .social-links {
+            display: flex;
+
+            & > a {
+                background: $blue-footer;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+        }
+    }
+}
