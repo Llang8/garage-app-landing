@@ -28,7 +28,6 @@ window.onload = setInterval(function() {
 
 /* Handle animations on scroll */
 window.onscroll = function(e) {
-    console.log('test');
     if (!document.getElementsByTagName('nav')[0].classList.contains('nav-sticky') && window.scrollY > 0) {
         document.getElementsByTagName('nav')[0].classList.add('nav-sticky');
     } else if( window.scrollY == 0) {

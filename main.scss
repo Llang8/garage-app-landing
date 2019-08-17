@@ -16,6 +16,7 @@ html,body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 /************************** 
@@ -46,6 +47,10 @@ nav {
 
 .nav-sticky {
     background: $dark-blue;
+}
+
+@media (min-width: 600px) {
+    
 }
 
 /************************** 
@@ -91,6 +96,15 @@ nav {
 
 .fadeUpOnScroll, .fadeRightOnScroll, .fadeLeftOnScroll {
     opacity: 0;
+}
+
+@media (min-width:900px) {
+    .fadeRight {
+        animation: fadeUp 2s !important;
+    }
+    .fadeLeft {
+        animation: fadeUp 2s !important;
+    }
 }
 
 @keyframes fadeUp {
@@ -205,6 +219,14 @@ nav {
 
 }
 
+@media (min-width: 900px) {
+    .landing {
+        background-size: 100vw auto;
+        background-position-x: 0px;
+    }
+}
+
+
 @keyframes loadBar {
     0% {
         width: 0;
@@ -241,13 +263,27 @@ nav {
         flex-direction: column;
         color: $dark-blue;
 
-        & > h1 {
-            margin-bottom: 5px;
-        }
+        .community-message {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-        & > p {
-            margin-top: 0;
+            & > h1 {
+                margin-bottom: 5px;
+            }
+    
+            & > p {
+                margin-top: 0;
+            }
         }
+    }
+}
+
+@media(min-width: 900px) {
+    .community-wrapper {
+        flex-direction: row !important;
+        justify-content: center;
     }
 }
 
@@ -286,6 +322,17 @@ nav {
             background: white;
             border-radius: 50%;
             margin: 15px 0;
+        }
+    }
+}
+
+@media(min-width: 900px) {
+    .features-wrapper {
+        flex-direction: row !important;
+        justify-content: center;
+
+        .feature {
+            max-width: 30%;
         }
     }
 }
@@ -434,6 +481,31 @@ footer {
                 border-radius: 50%;
                 margin-right: 10px;
             }
+        }
+    }
+}
+
+@media(min-width: 600px) {
+    footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .footer-links {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        
+            & > h1 {
+                margin-right: 10px;
+            }
+            & > a {
+                margin: 0px 5px;
+            }
+        }
+
+        .footer-social {
+            margin: 0;
         }
     }
 }
