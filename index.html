@@ -13,8 +13,14 @@
     
     <nav>
         <h1>GarageApp</h1>
+        <ul id="nav-buttons">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
         <!-- Insert Hamburger Menu Here -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 22.97 23">
+        <svg id="hamburger" class="hamburger" onclick="toggleMenu()" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 22.97 23">
         <defs>
             <style>
             .cls-1 {
@@ -23,7 +29,7 @@
             }
             </style>
         </defs>
-        <path id="Menu" class="cls-1" d="M1208.44,481h19.96a1.513,1.513,0,0,0,0-3.025h-19.96A1.513,1.513,0,0,0,1208.44,481Zm19.96,16.935h-19.96a1.512,1.512,0,0,0,0,3.024h19.96A1.512,1.512,0,0,0,1228.4,497.935Zm0-9.979h-19.96a1.512,1.512,0,0,0,0,3.024h19.96A1.512,1.512,0,0,0,1228.4,487.956Z" transform="translate(-1206.94 -477.969)"/>
+        <path class="cls-1" d="M1208.44,481h19.96a1.513,1.513,0,0,0,0-3.025h-19.96A1.513,1.513,0,0,0,1208.44,481Zm19.96,16.935h-19.96a1.512,1.512,0,0,0,0,3.024h19.96A1.512,1.512,0,0,0,1228.4,497.935Zm0-9.979h-19.96a1.512,1.512,0,0,0,0,3.024h19.96A1.512,1.512,0,0,0,1228.4,487.956Z" transform="translate(-1206.94 -477.969)"/>
         </svg>
     </nav>
 
@@ -76,7 +82,7 @@
                     <h1>Advertise Your Sale</h1>
                     <p>Increase your profits, share your garage sale with potential customers in your area.</p>  
                 </div>
-                <div class="feature-divider"></div>
+                <div class="feature-divider fadeRightOnScroll"></div>
                 <div class="feature fadeLeftOnScroll">
                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M30 0C13.4314 0 0 4.1973 0 9.375V15L22.5 37.5V56.25C22.5 58.3211 25.8578 60 30 60C34.1422 60 37.5 58.3211 37.5 56.25V37.5L60 15V9.375C60 4.1973 46.5686 0 30 0ZM5.53031 8.13422C6.93328 7.33395 8.90426 6.57445 11.2302 5.93766C16.3832 4.52695 23.049 3.75 30 3.75C36.951 3.75 43.6168 4.52695 48.7698 5.93766C51.0957 6.57445 53.0667 7.33395 54.4698 8.13422C55.3951 8.66191 55.895 9.10828 56.1278 9.375C55.895 9.64172 55.395 10.088 54.4698 10.6158C53.0667 11.4161 51.0957 12.1755 48.7698 12.8123C43.617 14.223 36.951 15 30 15C23.049 15 16.3832 14.223 11.2302 12.8123C8.90426 12.1755 6.93328 11.4161 5.53031 10.6158C4.605 10.088 4.10508 9.64172 3.87223 9.375C4.10508 9.10828 4.605 8.66203 5.53031 8.13422Z" fill="white"/>
@@ -84,7 +90,7 @@
                     <h1>Filter By Category</h1>
                     <p>Looking for something specific? Your search made simple with categorical filtering!</p>  
                 </div>
-                <div class="feature-divider"></div>
+                <div class="feature-divider fadeRightOnScroll"></div>
                 <div class="feature fadeRightOnScroll">
                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M41.25 60H60L45 0H33.75L35.625 15H24.375L26.25 0H15L0 60H18.75L20.625 45H39.375L41.25 60ZM21.5625 37.5L23.4375 22.5H36.5625L38.4375 37.5H21.5625Z" fill="white"/>
@@ -95,7 +101,7 @@
             </div>
         </section>
         <!-- CONTACT SECTION -->
-        <section class="contact-section">
+        <section id="contact" class="contact-section">
             <div class="contact-wrapper fadeUpOnScroll">
                 <div class="contact-header">
                     <div class="bar-left"></div>

@@ -73,3 +73,22 @@ window.onscroll = function(e) {
         }
     }
 }
+
+/* Handle Hamburger click */
+function toggleMenu() {
+    if ( document.getElementById('nav-buttons').classList.contains('mobile-show-nav')) {
+        document.getElementById('nav-buttons').classList.remove('mobile-show-nav');
+    
+    /* Make sure it's in mobile view */
+    } else if (window.innerWidth < 900) {
+        document.getElementById('nav-buttons').classList.add('mobile-show-nav');
+    }
+}
+
+/* Handle listener for clicking off of navbar */
+document.addEventListener('click', (e) => {
+    console.log(e.target.id)
+    if ( e.target.id != 'nav-buttons' && e.target.id != 'hamburger' && document.getElementById('nav-buttons').classList.contains('mobile-show-nav')) {
+        document.getElementById('nav-buttons').classList.remove('mobile-show-nav');
+    }
+})
